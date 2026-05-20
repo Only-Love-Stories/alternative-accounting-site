@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audit &amp; Assurance | Alternative Accounting — Registered Company Auditor, Brisbane</title>
+<meta name="description" content="Independent audit and assurance from Alternative Accounting — not-for-profit and ACNC audits, trust account audits, ancillary funds and AML audits, led by Registered Company Auditor Prellin Chetty.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-soft:#544d44;
+    --orange:#d9531e;
+    --orange-deep:#a93c11;
+    --cream:#faf6f0;
+    --cream-deep:#f1e8db;
+    --paper:#ffffff;
+    --line:#e6ddce;
+    --display:'Fraunces',Georgia,serif;
+    --body:'Hanken Grotesk',-apple-system,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand img{height:38px;width:auto}
+  .brand .mark-fallback{height:34px;width:34px;border-radius:50%;background:conic-gradient(from 210deg,var(--orange),var(--orange-deep),#e8a04a,var(--orange));flex-shrink:0}
+  .brand-name{font-family:var(--display);font-weight:600;font-size:1.32rem;letter-spacing:-.01em}
+  .brand-name span{color:var(--orange)}
+  nav ul{display:flex;align-items:center;gap:34px;list-style:none}
+  nav a{font-size:.94rem;font-weight:500;color:var(--ink-soft);transition:color .2s}
+  nav a:hover,nav a.active{color:var(--orange)}
+  .nav-cta{background:var(--ink);color:#fff;padding:11px 22px;border-radius:999px;font-size:.9rem;font-weight:600;transition:background .2s,transform .2s}
+  .nav-cta:hover{background:var(--orange);color:#fff;transform:translateY(-1px)}
+  .burger{display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:5px;padding:8px}
+  .burger span{width:24px;height:2px;background:var(--ink);display:block;transition:.25s}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:999px;font-weight:600;font-size:.97rem;transition:transform .2s,background .2s,box-shadow .2s}
+  .btn-primary{background:var(--orange);color:#fff;box-shadow:0 10px 26px -10px rgba(217,83,30,.6)}
+  .btn-primary:hover{background:var(--orange-deep);transform:translateY(-2px)}
+  .btn .arr{transition:transform .2s}
+  .btn:hover .arr{transform:translateX(4px)}
+  .text-link{color:var(--orange-deep);font-weight:600;border-bottom:1.5px solid var(--orange);padding-bottom:1px}
+
+  /* Page hero */
+  .page-hero{position:relative;background:var(--cream);padding:84px 0 0;overflow:hidden}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.8rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--orange-deep);margin-bottom:24px}
+  .eyebrow::before{content:"";width:30px;height:2px;background:var(--orange)}
+  .page-hero h1{font-family:var(--display);font-weight:500;font-size:clamp(2.5rem,4.8vw,3.8rem);line-height:1.06;letter-spacing:-.022em;max-width:16ch}
+  .page-hero h1 em{font-style:italic;color:var(--orange)}
+  .page-hero .lead{margin-top:22px;font-size:1.16rem;color:var(--ink-soft);max-width:54ch}
+  .he-ring{position:absolute;border-radius:50%;border:2px solid var(--orange);opacity:.22}
+  .he-ring.a{width:300px;height:300px;top:-90px;right:-60px}
+  .he-ring.b{width:200px;height:200px;top:-30px;right:30px;border-color:var(--orange-deep)}
+  .reg-strip{display:flex;flex-wrap:wrap;gap:0;margin-top:54px;border-top:1px solid var(--line)}
+  .reg-item{flex:1 1 30%;min-width:200px;padding:30px 30px 30px 0}
+  .reg-key{font-family:var(--display);font-weight:600;font-size:2.2rem;color:var(--ink);line-height:1}
+  .reg-key span{color:var(--orange)}
+  .reg-label{font-size:.92rem;color:var(--ink-soft);margin-top:10px}
+
+  /* Sections */
+  section{padding:90px 0}
+  .sec-tag{font-size:.8rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--orange-deep);margin-bottom:16px}
+  h2{font-family:var(--display);font-weight:500;font-size:clamp(2rem,3.6vw,2.7rem);line-height:1.12;letter-spacing:-.02em}
+
+  /* Focus */
+  .focus-grid{display:grid;grid-template-columns:.42fr .58fr;gap:54px}
+  .focus-grid .body p{font-size:1.06rem;color:var(--ink-soft);margin-bottom:20px}
+  .focus-grid .body p:last-child{margin-bottom:0}
+  .focus-grid .body .lead-p{font-family:var(--display);font-size:1.32rem;font-style:italic;color:var(--ink);line-height:1.4}
+
+  /* Services */
+  .svc-wrap{background:var(--cream)}
+  .acards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+  .acard{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:34px 30px;transition:transform .25s,box-shadow .25s,border-color .25s}
+  .acard:hover{transform:translateY(-5px);box-shadow:0 24px 46px -28px rgba(28,26,23,.3);border-color:var(--orange)}
+  .acard h4{font-family:var(--display);font-weight:600;font-size:1.28rem;letter-spacing:-.01em;padding-bottom:18px;margin-bottom:18px;border-bottom:1px solid var(--line)}
+  .acard ul{list-style:none}
+  .acard li{font-size:.97rem;color:var(--ink-soft);padding-left:20px;position:relative;margin-bottom:11px}
+  .acard li:last-child{margin-bottom:0}
+  .acard li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:50%;background:var(--orange)}
+
+  /* Independence band */
+  .iq-band{background:var(--ink);color:#f3ede3}
+  .iq-band .sec-tag{color:#e8a04a}
+  .iq-band h2{color:#fff;max-width:18ch}
+  .iq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:44px;background:#3a342c;border:1px solid #3a342c}
+  .iq-item{background:var(--ink);padding:34px 32px}
+  .iq-item h4{font-family:var(--display);font-weight:600;font-size:1.2rem;color:#fff;margin-bottom:10px}
+  .iq-item p{font-size:.97rem;color:#b9b0a2}
+
+  /* Experience */
+  .exp-grid{display:grid;grid-template-columns:.42fr .58fr;gap:54px;align-items:center}
+  .exp-grid .body p{font-size:1.06rem;color:var(--ink-soft);margin-bottom:20px}
+
+  /* CTA */
+  .cta{background:var(--orange);color:#fff;text-align:center}
+  .cta h2{color:#fff}
+  .cta p{color:#ffe6d8;font-size:1.1rem;margin:18px auto 34px;max-width:48ch}
+  .cta .btn-primary{background:#fff;color:var(--orange-deep);box-shadow:0 12px 30px -12px rgba(0,0,0,.35)}
+  .cta .btn-primary:hover{background:var(--ink);color:#fff}
+
+  /* Footer */
+  footer{background:var(--ink);color:#aaa093;padding:72px 0 32px}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid #3a342c}
+  .foot-brand .brand-name{color:#fff;font-size:1.3rem}
+  .foot-brand p{margin-top:16px;font-size:.95rem;max-width:34ch;color:#9a9082}
+  .cpa-panel{display:inline-flex;align-items:center;justify-content:center;background:#fff;border-radius:10px;padding:14px 20px;margin-top:24px}
+  .cpa-panel img{height:46px;width:auto}
+  .cpa-panel .cpa-fallback{font-family:var(--display);font-weight:600;font-size:.9rem;color:var(--ink);text-align:center;line-height:1.3}
+  .foot-col h5{color:#fff;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:18px}
+  .foot-col a,.foot-col p{display:block;font-size:.94rem;color:#aaa093;margin-bottom:11px;transition:color .2s}
+  .foot-col a:hover{color:var(--orange)}
+  .foot-bottom{padding-top:28px;font-size:.85rem;color:#7d7468;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:880px){
+    .wrap{padding:0 22px}
+    .burger{display:flex}
+    nav ul{position:fixed;inset:78px 0 auto 0;background:var(--paper);flex-direction:column;gap:0;padding:8px 22px 22px;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:transform .3s;box-shadow:0 20px 30px -20px rgba(0,0,0,.25)}
+    nav ul.open{transform:translateY(0)}
+    nav li{width:100%;border-bottom:1px solid var(--line)}
+    nav li:last-child{border:0;padding-top:14px}
+    nav a{display:block;padding:15px 0}
+    .nav-cta{display:inline-block}
+    section{padding:62px 0}
+    .reg-item{flex:1 1 100%;padding:22px 0;border-bottom:1px solid var(--line)}
+    .focus-grid,.exp-grid{grid-template-columns:1fr;gap:30px}
+    .acards{grid-template-columns:1fr}
+    .iq-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand" aria-label="Alternative Accounting home">
+      <img src="logo.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="mark-fallback" style="display:none"></span>
+      <span class="brand-name">Alternative<span>&nbsp;Accounting</span></span>
+    </a>
+    <nav>
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="audit.html" class="active">Audit</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in touch</a></li>
+      </ul>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <span class="he-ring a"></span>
+  <span class="he-ring b"></span>
+  <div class="wrap">
+    <div class="reveal in">
+      <span class="eyebrow">Audit &amp; Assurance</span>
+      <h1>Audit, led by the person who <em>signs</em> it.</h1>
+      <p class="lead">Alternative Accounting provides independent audit and assurance — for not-for-profits, charities, trust accounts and funds — led personally by Prellin Chetty, a Registered Company Auditor with 26 years' experience.</p>
+    </div>
+    <div class="reg-strip reveal in">
+      <div class="reg-item">
+        <div class="reg-key">No.&nbsp;<span>495493</span></div>
+        <div class="reg-label">Registered Company Auditor</div>
+      </div>
+      <div class="reg-item">
+        <div class="reg-key">26 years</div>
+        <div class="reg-label">Audit &amp; public practice experience</div>
+      </div>
+      <div class="reg-item">
+        <div class="reg-key">ACNC</div>
+        <div class="reg-label">Not-for-profit audit specialist</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOCUS -->
+<section>
+  <div class="wrap focus-grid">
+    <div class="reveal">
+      <p class="sec-tag">A genuine specialism</p>
+      <h2>Not-for-profit audit, at the core of the practice.</h2>
+    </div>
+    <div class="body reveal">
+      <p class="lead-p">For many firms, not-for-profit audit is an add-on. For us it is the focus.</p>
+      <p>That focus means a genuine, working command of the frameworks not-for-profits and charities operate within — the ACNC regime, general and special purpose reporting, and the particular obligations that come with grant funding and ancillary fund status. It is the difference between an auditor who knows the sector and one who is learning it on your engagement.</p>
+      <p>It also means partner-level attention as standard. When you engage the firm, the audit is led personally by Prellin Chetty — the Registered Company Auditor responsible for the opinion — not delegated down a chain of junior staff. You deal directly with the person accountable for the work.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="svc-wrap">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="sec-tag">What we audit</p>
+      <h2>Audit &amp; assurance services.</h2>
+    </div>
+    <div class="acards">
+      <div class="acard reveal">
+        <h4>Not-for-profit &amp; financial statements</h4>
+        <ul>
+          <li>ACNC audits</li>
+          <li>Financial statement audits</li>
+          <li>Special purpose audits</li>
+          <li>Review engagements</li>
+          <li>Grant acquittal audits</li>
+        </ul>
+      </div>
+      <div class="acard reveal">
+        <h4>Trust account audits</h4>
+        <ul>
+          <li>Solicitor trust accounts — NSW</li>
+          <li>Solicitor trust accounts — QLD</li>
+          <li>Real estate trust account audits</li>
+        </ul>
+      </div>
+      <div class="acard reveal">
+        <h4>Funds &amp; specialist assurance</h4>
+        <ul>
+          <li>Public ancillary funds</li>
+          <li>Private ancillary funds</li>
+          <li>Anti-money laundering (AML) audits</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDEPENDENCE & QUALITY -->
+<section class="iq-band">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="sec-tag">Independence &amp; quality</p>
+      <h2>The standards behind every opinion.</h2>
+    </div>
+    <div class="iq-grid">
+      <div class="iq-item reveal">
+        <h4>Independence</h4>
+        <p>Every engagement is assessed against the independence requirements of the Accounting Professional &amp; Ethical Standards. We accept audit work only where we can act with genuine objectivity.</p>
+      </div>
+      <div class="iq-item reveal">
+        <h4>Quality control</h4>
+        <p>As a CPA practice, the firm meets the professional, legal and ethical requirements of CPA Australia, with quality processes applied to every audit.</p>
+      </div>
+      <div class="iq-item reveal">
+        <h4>Professional indemnity</h4>
+        <p>The practice carries professional indemnity insurance appropriate to the audit and assurance work it undertakes.</p>
+      </div>
+      <div class="iq-item reveal">
+        <h4>Always current</h4>
+        <p>Auditing and assurance standards evolve continually. Ongoing professional education keeps the practice's methodology up to date.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section>
+  <div class="wrap exp-grid">
+    <div class="reveal">
+      <p class="sec-tag">The auditor</p>
+      <h2>An experienced audit practitioner.</h2>
+    </div>
+    <div class="body reveal">
+      <p>Prellin Chetty is a CPA with 26 years in the profession and a Registered Company Auditor. His audit career began well before Alternative Accounting — as Audit Manager for a mid-tier firm in Sydney, and earlier with KPMG in South Africa and revenue authorities in two countries. Today that experience is focused on the not-for-profit and SME sectors, and on ACNC reporting.</p>
+      <p><a href="about.html" class="text-link">Read more about Prellin and the practice &rarr;</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap reveal">
+    <h2>Request an audit proposal.</h2>
+    <p>Tell us about your organisation and the audit you need, and we'll prepare a proposal and quote for your consideration.</p>
+    <a href="contact.html" class="btn btn-primary">Get in touch <span class="arr">&rarr;</span></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="brand-name">Alternative&nbsp;Accounting</span>
+        <p>A Brisbane-based CPA practice providing accounting, tax and audit services for the wellbeing of all.</p>
+        <div class="cpa-panel">
+          <img src="cpa-logo.jpg" alt="CPA Australia Public Practice" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="cpa-fallback" style="display:none">CPA Australia<br>Public Practice</span>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>Explore</h5>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="audit.html">Audit</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h5>Credentials</h5>
+        <p>CPA Practice</p>
+        <p>Registered Company Auditor No. 495493</p>
+        <p>Registered Tax Agent No. 26123756</p>
+        <a href="mailto:prellin@alternativeaccounting.com.au">prellin@alternativeaccounting.com.au</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Alternative Accounting.</span>
+      <span>Liability limited by a scheme approved under Professional Standards Legislation.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var burger=document.getElementById('burger'),menu=document.getElementById('menu');
+  burger.addEventListener('click',function(){menu.classList.toggle('open')});
+  menu.addEventListener('click',function(e){if(e.target.tagName==='A')menu.classList.remove('open')});
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}});
+  },{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(function(el){if(!el.classList.contains('in'))io.observe(el)});
+</script>
+</body>
+</html>

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alternative Accounting | Brisbane CPA Practice — Accounting, Tax & Audit</title>
+<meta name="description" content="Alternative Accounting is a Brisbane CPA practice providing accounting, tax and audit services for small businesses, not-for-profits and professional firms.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-soft:#544d44;
+    --orange:#d9531e;
+    --orange-deep:#a93c11;
+    --cream:#faf6f0;
+    --cream-deep:#f1e8db;
+    --paper:#ffffff;
+    --line:#e6ddce;
+    --display:'Fraunces',Georgia,serif;
+    --body:'Hanken Grotesk',-apple-system,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--body);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand img{height:38px;width:auto}
+  .brand .mark-fallback{
+    height:34px;width:34px;border-radius:50%;
+    background:conic-gradient(from 210deg,var(--orange),var(--orange-deep),#e8a04a,var(--orange));
+    flex-shrink:0;
+  }
+  .brand-name{font-family:var(--display);font-weight:600;font-size:1.32rem;letter-spacing:-.01em}
+  .brand-name span{color:var(--orange)}
+  nav ul{display:flex;align-items:center;gap:34px;list-style:none}
+  nav a{font-size:.94rem;font-weight:500;color:var(--ink-soft);transition:color .2s}
+  nav a:hover{color:var(--orange)}
+  .nav-cta{
+    background:var(--ink);color:#fff;padding:11px 22px;border-radius:999px;
+    font-size:.9rem;font-weight:600;transition:background .2s,transform .2s;
+  }
+  .nav-cta:hover{background:var(--orange);color:#fff;transform:translateY(-1px)}
+  .burger{display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:5px;padding:8px}
+  .burger span{width:24px;height:2px;background:var(--ink);display:block;transition:.25s}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;padding:88px 0 96px;background:var(--cream);overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;
+    font-size:.8rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--orange-deep);margin-bottom:26px;
+  }
+  .eyebrow::before{content:"";width:30px;height:2px;background:var(--orange)}
+  h1{
+    font-family:var(--display);font-weight:500;
+    font-size:clamp(2.7rem,5.4vw,4.15rem);line-height:1.04;
+    letter-spacing:-.022em;margin-bottom:26px;
+  }
+  h1 em{font-style:italic;color:var(--orange)}
+  .hero-sub{font-size:1.16rem;color:var(--ink-soft);max-width:33ch;margin-bottom:36px}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:15px 30px;border-radius:999px;font-weight:600;font-size:.97rem;
+    transition:transform .2s,background .2s,box-shadow .2s;
+  }
+  .btn-primary{background:var(--orange);color:#fff;box-shadow:0 10px 26px -10px rgba(217,83,30,.6)}
+  .btn-primary:hover{background:var(--orange-deep);transform:translateY(-2px)}
+  .btn-ghost{border:1.5px solid var(--ink);color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:#fff;transform:translateY(-2px)}
+  .btn .arr{transition:transform .2s}
+  .btn:hover .arr{transform:translateX(4px)}
+
+  /* spiral motif */
+  .hero-art{position:relative;height:380px;display:flex;align-items:center;justify-content:center}
+  .ring{position:absolute;border-radius:50%;border:2px solid transparent}
+  .ring.r1{width:340px;height:340px;border-top-color:var(--orange);border-right-color:var(--orange);transform:rotate(-20deg);animation:spin 34s linear infinite}
+  .ring.r2{width:256px;height:256px;border-top-color:var(--orange-deep);border-left-color:var(--orange-deep);transform:rotate(60deg);animation:spin 26s linear infinite reverse}
+  .ring.r3{width:170px;height:170px;border-bottom-color:#e8a04a;border-right-color:#e8a04a;animation:spin 18s linear infinite}
+  .ring-core{
+    width:96px;height:96px;border-radius:50%;
+    background:conic-gradient(from 210deg,var(--orange),var(--orange-deep),#e8a04a,var(--orange));
+    box-shadow:0 16px 40px -12px rgba(217,83,30,.55);
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .hero-art .blob{position:absolute;width:300px;height:300px;background:radial-gradient(circle,rgba(217,83,30,.13),transparent 68%);border-radius:50%}
+
+  /* ---------- Trust strip ---------- */
+  .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper)}
+  .trust-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding:26px 0}
+  .trust-item{display:flex;align-items:center;gap:11px;font-size:.92rem;font-weight:500;color:var(--ink-soft)}
+  .trust-item .dot{width:7px;height:7px;border-radius:50%;background:var(--orange);flex-shrink:0}
+
+  /* ---------- Sections ---------- */
+  section{padding:96px 0}
+  .sec-head{max-width:620px;margin-bottom:54px}
+  .sec-tag{
+    font-size:.8rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--orange-deep);margin-bottom:16px;
+  }
+  h2{font-family:var(--display);font-weight:500;font-size:clamp(2rem,3.6vw,2.85rem);line-height:1.1;letter-spacing:-.02em}
+  h2 + p{margin-top:18px;font-size:1.08rem;color:var(--ink-soft)}
+
+  /* Services */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .card{
+    background:var(--paper);border:1px solid var(--line);border-radius:18px;
+    padding:38px 32px;transition:transform .25s,box-shadow .25s,border-color .25s;
+    display:flex;flex-direction:column;
+  }
+  .card:hover{transform:translateY(-6px);box-shadow:0 26px 50px -28px rgba(28,26,23,.32);border-color:var(--orange)}
+  .card-num{font-family:var(--display);font-size:1rem;color:var(--orange);margin-bottom:20px;font-weight:600}
+  .card h3{font-family:var(--display);font-weight:600;font-size:1.42rem;margin-bottom:14px;letter-spacing:-.01em}
+  .card p{font-size:.98rem;color:var(--ink-soft);margin-bottom:24px;flex-grow:1}
+  .card-link{font-weight:600;font-size:.93rem;color:var(--orange-deep);display:inline-flex;gap:7px;align-items:center}
+  .card:hover .card-link .arr{transform:translateX(4px)}
+  .card-link .arr{transition:transform .2s}
+
+  /* Audit band */
+  .audit-band{background:var(--ink);color:#f3ede3}
+  .audit-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .audit-band .sec-tag{color:#e8a04a}
+  .audit-band h2{color:#fff}
+  .audit-band p{color:#c9c0b3;font-size:1.06rem;margin-top:20px}
+  .audit-list{list-style:none;margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:13px 22px}
+  .audit-list li{font-size:.95rem;color:#e3dccf;display:flex;gap:10px;align-items:flex-start}
+  .audit-list li::before{content:"—";color:var(--orange);font-weight:700}
+  .audit-cta{margin-top:36px}
+  .reg-chip{
+    display:inline-block;border:1px solid #4a4339;border-radius:12px;
+    padding:22px 26px;margin-top:8px;
+  }
+  .reg-chip .label{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:#9a9082}
+  .reg-chip .num{font-family:var(--display);font-size:1.7rem;color:#fff;margin-top:4px}
+  .reg-chip .who{font-size:.9rem;color:#c9c0b3;margin-top:6px}
+
+  /* Approach */
+  .approach{background:var(--cream)}
+  .approach-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px}
+  .principles{display:flex;flex-direction:column;gap:8px}
+  .principle{display:flex;gap:20px;padding:24px 0;border-bottom:1px solid var(--line)}
+  .principle:last-child{border-bottom:0}
+  .principle .pn{font-family:var(--display);color:var(--orange);font-size:1.1rem;font-weight:600;flex-shrink:0}
+  .principle h4{font-size:1.08rem;margin-bottom:5px}
+  .principle p{font-size:.97rem;color:var(--ink-soft)}
+  .approach p.lead{font-size:1.08rem;color:var(--ink-soft);margin:18px 0 26px}
+  .text-link{color:var(--orange-deep);font-weight:600;border-bottom:1.5px solid var(--orange);padding-bottom:1px}
+
+  /* Sectors */
+  .sectors{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+  .sector{
+    border:1px solid var(--line);border-radius:999px;padding:11px 22px;
+    font-size:.95rem;font-weight:500;color:var(--ink-soft);background:var(--paper);
+    transition:.2s;
+  }
+  .sector:hover{border-color:var(--orange);color:var(--orange-deep)}
+
+  /* Testimonials */
+  .tcards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .tcard{
+    border:1px solid var(--line);border-radius:18px;padding:32px 30px;
+    background:var(--cream);display:flex;flex-direction:column;
+    transition:transform .25s,box-shadow .25s,border-color .25s;
+  }
+  .tcard:hover{transform:translateY(-6px);box-shadow:0 26px 50px -28px rgba(28,26,23,.32);border-color:var(--orange)}
+  .tcard .qmark{font-family:var(--display);font-size:3rem;line-height:.4;color:var(--orange);height:30px}
+  .tcard .tq{font-family:var(--display);font-size:1.1rem;font-style:italic;color:var(--ink-soft);line-height:1.5;margin:12px 0 24px;flex-grow:1}
+  .tcard .tperson{display:flex;align-items:center;gap:13px;border-top:1px solid var(--line);padding-top:20px}
+  .tcard .tavatar{
+    width:46px;height:46px;border-radius:50%;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(217,83,30,.12);
+    font-family:var(--display);font-weight:600;font-size:1.1rem;
+    color:var(--orange-deep);
+  }
+  .tcard .tname{font-weight:600;font-size:.95rem;color:var(--ink)}
+  .tcard .trole{font-size:.85rem;color:var(--ink-soft)}
+
+  /* CTA */
+  .cta{background:var(--orange);color:#fff;text-align:center}
+  .cta h2{color:#fff}
+  .cta p{color:#ffe6d8;font-size:1.1rem;margin:18px auto 34px;max-width:46ch}
+  .cta .btn-primary{background:#fff;color:var(--orange-deep);box-shadow:0 12px 30px -12px rgba(0,0,0,.35)}
+  .cta .btn-primary:hover{background:var(--ink);color:#fff}
+
+  /* Footer */
+  footer{background:var(--ink);color:#aaa093;padding:72px 0 32px}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid #3a342c}
+  .foot-brand .brand-name{color:#fff;font-size:1.3rem}
+  .foot-brand p{margin-top:16px;font-size:.95rem;max-width:34ch;color:#9a9082}
+  .cpa-panel{
+    display:inline-flex;align-items:center;justify-content:center;
+    background:#fff;border-radius:10px;padding:14px 20px;margin-top:24px;
+  }
+  .cpa-panel img{height:46px;width:auto}
+  .cpa-panel .cpa-fallback{
+    font-family:var(--display);font-weight:600;font-size:.9rem;color:var(--ink);
+    text-align:center;line-height:1.3;
+  }
+  .foot-col h5{color:#fff;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:18px}
+  .foot-col a,.foot-col p{display:block;font-size:.94rem;color:#aaa093;margin-bottom:11px;transition:color .2s}
+  .foot-col a:hover{color:var(--orange)}
+  .foot-bottom{padding-top:28px;font-size:.85rem;color:#7d7468;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- Responsive ---------- */
+  @media(max-width:880px){
+    .wrap{padding:0 22px}
+    .burger{display:flex}
+    nav ul{
+      position:fixed;inset:78px 0 auto 0;background:var(--paper);
+      flex-direction:column;gap:0;padding:8px 22px 22px;
+      border-bottom:1px solid var(--line);transform:translateY(-130%);
+      transition:transform .3s;box-shadow:0 20px 30px -20px rgba(0,0,0,.25);
+    }
+    nav ul.open{transform:translateY(0)}
+    nav li{width:100%;border-bottom:1px solid var(--line)}
+    nav li:last-child{border:0;padding-top:14px}
+    nav a{display:block;padding:15px 0}
+    .nav-cta{display:inline-block}
+    .hero-grid,.audit-grid,.approach-grid{grid-template-columns:1fr}
+    .hero-art{height:300px;order:-1}
+    .hero-sub{max-width:none}
+    .cards{grid-template-columns:1fr}
+    .tcards{grid-template-columns:1fr}
+    .audit-list{grid-template-columns:1fr}
+    section{padding:68px 0}
+    .foot-grid{grid-template-columns:1fr;gap:34px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand" aria-label="Alternative Accounting home">
+      <img src="logo.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="mark-fallback" style="display:none"></span>
+      <span class="brand-name">Alternative<span>&nbsp;Accounting</span></span>
+    </a>
+    <nav>
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="audit.html">Audit</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in touch</a></li>
+      </ul>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="reveal in">
+      <span class="eyebrow">Brisbane CPA Practice — Established 2016</span>
+      <h1>A <em>different</em> kind of accounting firm.</h1>
+      <p class="hero-sub">Accounting, tax and audit for small businesses, not-for-profits and professional firms — delivered with technical rigour and a genuinely people-first approach.</p>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn btn-primary">Start a conversation <span class="arr">&rarr;</span></a>
+        <a href="services.html" class="btn btn-ghost">Explore our services</a>
+      </div>
+    </div>
+    <div class="hero-art reveal in">
+      <span class="blob"></span>
+      <span class="ring r1"></span>
+      <span class="ring r2"></span>
+      <span class="ring r3"></span>
+      <span class="ring-core"></span>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust">
+  <div class="wrap trust-row">
+    <span class="trust-item"><span class="dot"></span>CPA Practice</span>
+    <span class="trust-item"><span class="dot"></span>Registered Company Auditor</span>
+    <span class="trust-item"><span class="dot"></span>Registered Tax Agent</span>
+    <span class="trust-item"><span class="dot"></span>26 years in the profession</span>
+    <span class="trust-item"><span class="dot"></span>2022 CPA Murray Wyatt Award Nominee</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-tag">What we do</p>
+      <h2>Three core services, one consistent standard.</h2>
+      <p>Whether it's a small business return or a complex not-for-profit audit, you work directly with an experienced CPA — not a rotating team.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <span class="card-num">01</span>
+        <h3>Accounting &amp; Tax</h3>
+        <p>Financial reports, income tax returns, BAS, FBT, land and payroll tax, and liaising with the ATO on your behalf — so the complexity stays with us.</p>
+        <a href="services.html" class="card-link">Learn more <span class="arr">&rarr;</span></a>
+      </div>
+      <div class="card reveal">
+        <span class="card-num">02</span>
+        <h3>Audit &amp; Assurance</h3>
+        <p>Specialist not-for-profit and ACNC audits, special purpose audits, review engagements, ancillary funds, and solicitor and real estate trust account audits.</p>
+        <a href="audit.html" class="card-link">View audit capability <span class="arr">&rarr;</span></a>
+      </div>
+      <div class="card reveal">
+        <span class="card-num">03</span>
+        <h3>Xero &amp; Bookkeeping</h3>
+        <p>Xero setup and training, monthly management reports, payroll and superannuation, and paperless payables — keeping your numbers clear all year round.</p>
+        <a href="services.html" class="card-link">Learn more <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIT BAND -->
+<section class="audit-band">
+  <div class="wrap audit-grid">
+    <div class="reveal">
+      <p class="sec-tag">Audit &amp; Assurance</p>
+      <h2>Not-for-profit audit is our focus — not a sideline.</h2>
+      <p>For many firms the not-for-profit sector is an add-on. For us it's the core of the practice, which means a genuine command of the regulatory, compliance and reporting frameworks our clients depend on.</p>
+      <ul class="audit-list">
+        <li>ACNC &amp; financial statement audits</li>
+        <li>Special purpose audits</li>
+        <li>Review engagements</li>
+        <li>Public &amp; private ancillary funds</li>
+        <li>Solicitor &amp; real estate trust accounts</li>
+        <li>Grant acquittals &amp; AML audits</li>
+      </ul>
+      <div class="audit-cta">
+        <a href="audit.html" class="btn btn-primary">View audit capability <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="reg-chip">
+        <div class="label">Registered Company Auditor</div>
+        <div class="num">No. 495493</div>
+        <div class="who">Prellin Chetty CPA — 26 years' experience across the<br>not-for-profit and SME sectors, including ACNC reporting,<br>grant acquittals, and audit roles with KPMG and revenue<br>authorities in three jurisdictions.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="approach">
+  <div class="wrap approach-grid">
+    <div class="reveal">
+      <p class="sec-tag">Why "Alternative"</p>
+      <h2>Accounting in service of people and purpose.</h2>
+      <p class="lead">Alternative Accounting was founded in 2016 on a simple idea: that accounting should serve people and purpose, not profit alone. We choose to work with organisations whose activity is directed at meeting real social and community needs.</p>
+      <a href="about.html" class="text-link">More about Prellin and the practice &rarr;</a>
+    </div>
+    <div class="principles reveal">
+      <div class="principle">
+        <span class="pn">01</span>
+        <div><h4>People first</h4><p>Decisions weighed for their impact on people and planet, not only the bottom line.</p></div>
+      </div>
+      <div class="principle">
+        <span class="pn">02</span>
+        <div><h4>Technical rigour</h4><p>Current on every regulatory and legislative change, so you don't have to be.</p></div>
+      </div>
+      <div class="principle">
+        <span class="pn">03</span>
+        <div><h4>A long view</h4><p>Built on lasting professional relationships, not one-off transactions.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTORS -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-tag">Who we work with</p>
+      <h2>Trusted across the sectors we know best.</h2>
+    </div>
+    <div class="sectors reveal">
+      <span class="sector">Small businesses</span>
+      <span class="sector">Not-for-profits &amp; charities</span>
+      <span class="sector">Independent schools</span>
+      <span class="sector">SMSF trustees</span>
+      <span class="sector">Real estate &amp; solicitor trust accounts</span>
+      <span class="sector">Grant recipients</span>
+      <span class="sector">Ancillary funds</span>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-bottom:42px">
+      <p class="sec-tag">In our clients' words</p>
+      <h2>Trusted by the people we work for.</h2>
+    </div>
+    <div class="tcards">
+      <div class="tcard reveal">
+        <span class="qmark">&ldquo;</span>
+        <p class="tq">As a tradesperson running my own business, I want an accountant who does more than just lodge the paperwork. Prellin has done exactly that &mdash; sorted my BAS and tax, helped me set up my super, and taken the time to map out a real plan for where I&rsquo;m headed. Genuinely good to deal with.</p>
+        <div class="tperson">
+          <span class="tavatar" aria-hidden="true">B</span>
+          <div><div class="tname">Brad</div><div class="trole">Director, BCB Welding and Fabrications</div></div>
+        </div>
+      </div>
+      <div class="tcard reveal">
+        <span class="qmark">&ldquo;</span>
+        <p class="tq">Prellin has been wonderful to work with. He looks after our BAS, payroll and tax with real care, keeps everything running smoothly through Xero, and is always quick to help when I have a question. I couldn&rsquo;t recommend Alternative Accounting more highly.</p>
+        <div class="tperson">
+          <span class="tavatar" aria-hidden="true">M</span>
+          <div><div class="tname">Margy</div><div class="trole">Director, George and Sons Property</div></div>
+        </div>
+      </div>
+      <div class="tcard reveal">
+        <span class="qmark">&ldquo;</span>
+        <p class="tq">Working with Alternative Accounting has been straightforward and reassuring. Prellin is responsive, thorough and fair, and his advice on technical accounting questions has been genuinely helpful to our committee. We have no hesitation recommending him.</p>
+        <div class="tperson">
+          <span class="tavatar" aria-hidden="true">T</span>
+          <div><div class="tname">Treasurer</div><div class="trole">ACNC not-for-profit audit client</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap reveal">
+    <h2>Let's work together.</h2>
+    <p>Tell us about your organisation and what you need — we'll take it from there.</p>
+    <a href="mailto:prellin@alternativeaccounting.com.au" class="btn btn-primary">Email prellin@alternativeaccounting.com.au</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="brand-name">Alternative&nbsp;Accounting</span>
+        <p>A Brisbane-based CPA practice providing accounting, tax and audit services for the wellbeing of all.</p>
+        <div class="cpa-panel">
+          <img src="cpa-logo.jpg" alt="CPA Australia Public Practice" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="cpa-fallback" style="display:none">CPA Australia<br>Public Practice</span>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>Explore</h5>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="audit.html">Audit</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h5>Credentials</h5>
+        <p>CPA Practice</p>
+        <p>Registered Company Auditor No. 495493</p>
+        <p>Registered Tax Agent No. 26123756</p>
+        <a href="mailto:prellin@alternativeaccounting.com.au">prellin@alternativeaccounting.com.au</a>
+    
