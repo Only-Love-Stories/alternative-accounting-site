@@ -224,7 +224,8 @@
   .foot-bottom{padding-top:28px;font-size:.85rem;color:#7d7468;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 
   /* reveal */
-  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .reveal{transition:opacity .7s ease,transform .7s ease}
+  .reveal.pre{opacity:0;transform:translateY(26px)}
   .reveal.in{opacity:1;transform:none}
 
   /* ---------- Responsive ---------- */
@@ -483,4 +484,39 @@
         <p>Registered Company Auditor No. 495493</p>
         <p>Registered Tax Agent No. 26123756</p>
         <a href="mailto:prellin@alternativeaccounting.com.au">prellin@alternativeaccounting.com.au</a>
-    
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Alternative Accounting.</span>
+      <span>Liability limited by a scheme approved under Professional Standards Legislation.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // mobile nav
+  var burger=document.getElementById('burger'),menu=document.getElementById('menu');
+  if(burger&&menu){
+    burger.addEventListener('click',function(){menu.classList.toggle('open')});
+    menu.addEventListener('click',function(e){if(e.target.tagName==='A')menu.classList.remove('open')});
+  }
+
+  // scroll reveal - sections stay visible even if this script fails to run
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){en.target.classList.remove('pre');en.target.classList.add('in');io.unobserve(en.target)}
+    });
+  },{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(function(el){
+    if(el.classList.contains('in'))return;
+    var box=el.getBoundingClientRect();
+    if(box.top<(window.innerHeight||document.documentElement.clientHeight)&&box.bottom>0){
+      el.classList.add('in');
+    }else{
+      el.classList.add('pre');
+      io.observe(el);
+    }
+  });
+</script>
+</body>
+</html>
